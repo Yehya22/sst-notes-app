@@ -9,6 +9,7 @@ export function ApiStack({ stack, app }) {
   //   customDomain:
   // app.stage === "prod" ? "api.my-serverless-app.com" : undefined,
     defaults: {
+      memorySize: 128,
       authorizer: "iam",
       function: {
         permissions: [table],
