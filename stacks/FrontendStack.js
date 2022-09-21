@@ -8,7 +8,6 @@ export function FrontendStack({ stack, app }) {
   const { auth } = use(AuthStack);
   const { bucket } = use(StorageStack);
 
-  // Define our React app
   const site = new ReactStaticSite(stack, "ReactSite", {
     // customDomain:
   // app.stage === "prod"
@@ -18,7 +17,6 @@ export function FrontendStack({ stack, app }) {
   //     }
   //   : undefined,
     path: "frontend",
-    // Pass in our environment variables
     environment: {
       REACT_APP_API_URL:api.url,
       REACT_APP_REGION: app.region,
@@ -29,7 +27,6 @@ export function FrontendStack({ stack, app }) {
     },
   });
 
-  // Show the url in the output
   stack.addOutputs({
     SiteUrl: site.url,
   });

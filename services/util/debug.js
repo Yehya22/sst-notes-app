@@ -3,7 +3,6 @@ import AWS from "aws-sdk";
 
 let logs;
 
-// Log AWS SDK calls
 AWS.config.logger = { log: debug };
 
 export default function debug() {
@@ -16,7 +15,6 @@ export default function debug() {
 export function init(event) {
   logs = [];
 
-  // Log API event
   debug("API event", {
     body: event.body,
     pathParameters: event.pathParameters,
